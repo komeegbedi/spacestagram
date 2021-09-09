@@ -1,0 +1,179 @@
+/* Reset */
+body,p,a,ul,li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+   font-family: 'Roboto', sans-serif;
+}
+
+li{
+    list-style-type: none;
+}
+
+/* base */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #060100;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,#420001 , #060100); 
+    background: linear-gradient(to right,#420001, #060100); 
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+header{
+    margin-top: 30px;
+}
+
+.title{
+    text-transform: uppercase;
+}
+
+header h1.title{
+    letter-spacing: 0.1em;
+}
+
+.hero{
+    height: 100vh;
+    position: relative;
+}
+
+.hero img{
+    filter: opacity(50%);
+    width: 80%;
+    position: absolute;
+    z-index: -10;
+}
+
+.hero div#particles-js{
+    height: 60%;
+    opacity: .7;
+}
+
+.hero div.hero-text{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-60%, -50%);
+}
+
+.hero div.hero-text h2{
+    letter-spacing: 0.055em;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.hero div.hero-text a.btn-dark{
+    color: #000;
+    background-color: #fff;
+    padding: .8rem .85rem;
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+    opacity: .8;
+    font-size: .9em;
+}
+
+section.gallery article{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+section.gallery article img{
+    width: 100%;
+}
+
+section.gallery h2.title{
+    font-size: 1.5em;
+    letter-spacing: 0.095em;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+section.gallery article h3{
+    margin-top: 20px;
+    font-size: 1.1em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+section.gallery article p{
+    font-weight: 250;
+    margin-bottom: 15px;
+}
+
+section.gallery article button.like-btn{
+    background: none;
+    color: red;
+    box-shadow: none;
+    border: none;
+    font-size: 2em;
+}
+section.gallery article time{
+    font-size: 0.8em;
+    opacity: .8;
+}
+/* mobile style */
+
+.hero img{
+    right: -25%;
+    top: 10%;
+}
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media  only screen and (min-width: 768px) { 
+    section.hero img{
+        width: 50%;
+        right: 0;
+        top: 5%;
+    }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) { 
+
+    .hero div.hero-text a.btn-dark{
+        padding: 1.2rem 1.3rem;
+        font-size: 1em;
+    }
+
+    section.hero img{
+        width: 40%;
+        right: 0;
+        top: 5%;
+    }
+
+    .hero div.hero-text{
+        transform: translate(-50%, -50%);
+    }
+
+    section.gallery article.col-lg-3{
+        width: 50%;
+    }
+
+    
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media  only screen and (min-width: 1220px) { 
+
+    section.hero img{
+        width: 35%;
+    }
+
+     section.gallery article.col-lg-3{
+        width: 25%;
+    }
+   
+}
