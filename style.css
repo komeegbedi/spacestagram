@@ -12,6 +12,9 @@ li{
 
 /* base */
 
+html , body{
+    overflow-x: hidden;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -23,7 +26,6 @@ body{
     background-repeat: no-repeat;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
 }
 
 header{
