@@ -84,6 +84,7 @@ section.gallery article{
     margin-bottom: 50px;
 }
 
+
 section.gallery article img{
     width: 100%;
 }
@@ -117,6 +118,8 @@ section.gallery article button.like-btn{
 section.gallery article time{
     font-size: 0.8em;
     opacity: .8;
+    margin: 15px 0;
+    display: block;
 }
 /* mobile style */
 
