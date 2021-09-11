@@ -134,8 +134,18 @@ section.gallery article h3{
 section.gallery article p{
     font-weight: 250;
     margin-bottom: 15px;
-    height: 300px;
-    overflow-y: scroll;
+    height: fit-content;
+    transition: all 0.1s ease-in;
+}
+
+section.gallery article p span.hidden{
+    display: none;
+}
+
+section.gallery article p a{
+    color: #fff;
+    text-decoration: underline;
+    opacity: .6;
 }
 
 section.gallery article button.like-btn{
