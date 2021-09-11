@@ -3,8 +3,6 @@
 const gallery = document.querySelector('section.gallery div.row');
 const loadingScreen = document.querySelector('p.loading-text');
 
-
-
 const fetchImages = async () =>{
 
     const API_KEY = 'OYrC1WZg8vIJ3RwcdxfXPNaR8DKKNijv5qfsxgqt';
