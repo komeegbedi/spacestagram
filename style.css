@@ -107,6 +107,7 @@ header h1.title{
 section.gallery article{
     width: 95%;
     margin: 0 auto;
+    height: fit-content;
     margin-bottom: 50px;
 }
 
@@ -181,10 +182,6 @@ p.lead{
     top: 10%;
 }
 
-section.gallery article{
-    height: fit-content;
-}
-
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -219,10 +216,6 @@ section.gallery article{
 
     section.gallery article.col-lg-3{
         width: 50%;
-    }
-
-    section.gallery article{
-        height: unset;
     }
 }
 

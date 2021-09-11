@@ -1,7 +1,9 @@
+'use strict';
+
 const gallery = document.querySelector('section.gallery div.row');
 const loadingScreen = document.querySelector('p.loading-text');
 
-particlesJS.load('particles-js', 'assets/particles.json');
+
 
 const fetchImages = async () =>{
 
@@ -19,9 +21,10 @@ const fetchImages = async () =>{
     return data;
 }
 
+
 const loadPost = () =>{
 
-    const maxLength = 50;
+    const maxLength = 50; //max lenght of number of words to show initial
     let isLiked;
 
     fetchImages()
@@ -33,14 +36,16 @@ const loadPost = () =>{
 
                 let text = post.explanation.trim();
             
-                let splitText = text.split(' ');
+                let splitText = text.split(' '); // I am spliting the string by space in order for me to count how many words they are in the string
 
                 let displayText = text;
                 let hiddenText = '';
+
                 isLiked = localStorage.getItem(index);
 
                 
                 if (splitText.length > maxLength){
+
                     displayText = splitText.slice(0 , maxLength).join(' ');
                     hiddenText = `<span class="hidden">${splitText.slice(maxLength , text.length).join(' ')}</span>`;
                 }
@@ -51,11 +56,12 @@ const loadPost = () =>{
                         <img src="${post.url}"  alt="${post.title}">
                         <h3 class="title">${post.title}</h3>
                         <time>${post.date}</time>
+
                         <p>${displayText +' '+ hiddenText} `;
                         
-                        if(hiddenText.length !== 0){
-                            html+= `<a href='javascript:void(0)' class="read-more">read more</a>`;
-                        }
+                if(hiddenText.length !== 0){
+                    html+= `<a href='javascript:void(0)' class="read-more">read more</a>`;
+                }
 
                 html+= `</p>
 
@@ -74,7 +80,8 @@ const loadPost = () =>{
     .catch(err => console.log(err));
 }
 
-
+//this function listens for click on the gallery section
+//I added the event listener to just the galery and not each indiviual post to improvement performance over time
 const listenForEvents = () => {
 
     gallery.addEventListener('click' , e => {
@@ -82,6 +89,7 @@ const listenForEvents = () => {
         let parentTag;
 
         if (e.target.tagName === 'I' || e.target.tagName === 'BUTTON' ){
+
             parentTag = e.target.parentNode;
 
             if(parentTag.tagName !== 'ARTICLE'){
@@ -92,6 +100,7 @@ const listenForEvents = () => {
             likeBtn(parentTag.getAttribute('id'));
         }
         else if(e.target.tagName === 'A'){
+
             parentTag = e.target.parentNode.parentNode;
 
             readMore(parentTag.getAttribute('id'));
@@ -104,12 +113,12 @@ const likeBtn = id =>{
 
     const likeBtn = document.getElementById(id).querySelector('i');
 
-    if (likeBtn.classList.contains('far')){ // post has not liked
+    if (likeBtn.classList.contains('far')){ // the post has not liked yet
 
         likeBtn.setAttribute('class', 'fas fa-heart');
         localStorage.setItem(id , 'liked');
     }
-    else{//post has been liked
+    else{//post has been liked already
 
         likeBtn.setAttribute('class', 'far fa-heart');
         localStorage.removeItem(id);
@@ -143,14 +152,20 @@ const scrollFunction = () => {
     }
 }
 
-onscroll = () => {
-    scrollFunction();
-};
+
 
 const main = () => {
 
     loadPost();
     listenForEvents();
+
+    onscroll = () => {
+        scrollFunction();
+    };
+
+    window.__forceSmoothScrollPolyfill__ = true;
+
+    particlesJS.load('particles-js', 'assets/particles.json');
 }
 
 main();
