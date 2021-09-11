@@ -22,6 +22,7 @@ const fetchImages = async () =>{
 const loadPost = () =>{
 
     const maxLength = 50;
+    let isLiked;
 
     fetchImages()
     .then(data => {
@@ -36,6 +37,7 @@ const loadPost = () =>{
 
                 let displayText = text;
                 let hiddenText = '';
+                isLiked = localStorage.getItem(index);
 
                 
                 if (splitText.length > maxLength){
@@ -57,7 +59,9 @@ const loadPost = () =>{
 
                 html+= `</p>
 
-                        <button  class="like-btn"><i class="far fa-heart"></i></button>
+                        <button  class="like-btn">
+                            <i class="${isLiked ? 'fas fa-heart' : 'far fa-heart'}"></i>
+                        </button>
                     </article>`;
 
                 gallery.innerHTML += html;
@@ -100,13 +104,15 @@ const likeBtn = id =>{
 
     const likeBtn = document.getElementById(id).querySelector('i');
 
-    if (likeBtn.classList.contains('far')){
+    if (likeBtn.classList.contains('far')){ // post has not liked
 
         likeBtn.setAttribute('class', 'fas fa-heart');
+        localStorage.setItem(id , 'liked');
     }
-    else{
+    else{//post has been liked
 
         likeBtn.setAttribute('class', 'far fa-heart');
+        localStorage.removeItem(id);
     }
 }
 
