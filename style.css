@@ -134,7 +134,7 @@ section.gallery article h3{
 }
 
 section.gallery article p{
-    font-weight: 250;
+    font-weight: 350;
     margin-bottom: 15px;
     height: fit-content;
     transition: all 0.1s ease-in;
