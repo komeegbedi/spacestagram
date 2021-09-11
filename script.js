@@ -150,6 +150,15 @@ const scrollFunction = () => {
     }
 }
 
+const clickHandler = function (e) {
+    e.preventDefault();
+    const href = this.getAttribute("href");
+    const offsetTop = document.querySelector(href).offsetTop;
+    scroll({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+}
 
 
 const main = () => {
@@ -161,9 +170,14 @@ const main = () => {
         scrollFunction();
     };
 
-    window.__forceSmoothScrollPolyfill__ = true;
-
     particlesJS.load('particles-js', 'assets/particles.json');
+
+    //helps to force smooth scroll on devices that don't support it
+    window.__forceSmoothScrollPolyfill__ = true;
+    document.querySelectorAll(".smooth-scroll").forEach(link => {
+        link.addEventListener("click", clickHandler)
+    });
+
 }
 
 main();
