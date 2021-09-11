@@ -66,13 +66,11 @@ header h1.title{
 }
 
 .hero{
-    height: 100vh;
     position: relative;
 }
 
 .hero img{
     filter: opacity(50%);
-    width: 80%;
     position: absolute;
     z-index: -10;
 }
@@ -84,13 +82,10 @@ header h1.title{
 
 .hero div.hero-text{
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-60%, -50%);
 }
 
 .hero div.hero-text h2{
-    letter-spacing: 0.055em;
+    letter-spacing: 0.1em;
     line-height: 1.5;
     margin-bottom: 30px;
 }
@@ -177,22 +172,42 @@ p.lead{
 }
 
 /* mobile style */
+/* Extra small devices (phones, less than 768px) */
+
+.hero{
+    height: 100vh;
+}
 
 .hero img{
     right: -25%;
     top: 10%;
+    width: 100%;
+}
+
+.hero div.hero-text{
+    top: 40%;
+    left: 40%;
+    transform: translate(-60%, -50%);
+}
+
+.display-1{
+    font-size: calc(1.7rem + 4.5vw);
 }
 
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
 /* Small devices (tablets, 768px and up) */
 @media  only screen and (min-width: 768px) { 
+    .hero{
+        height: 70vh;
+    }
     section.hero img{
-        width: 50%;
+        width: 60%;
         right: 0;
-        top: 5%;
+        top: 10%;
+    }
+
+    .hero div.hero-text{
+        transform: translate(-68%, -50%);
     }
 }
 
@@ -200,19 +215,23 @@ p.lead{
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (min-width: 992px) { 
 
+    .hero{
+        height: 100vh;
+    }
+
     .hero div.hero-text a.btn-dark{
         padding: 1.2rem 1.3rem;
         font-size: 1em;
     }
 
     section.hero img{
-        width: 40%;
-        right: 0;
-        top: 5%;
+        width: 55%;
+        right: 5%;
+        top: 0;
     }
 
     .hero div.hero-text{
-        transform: translate(-50%, -50%);
+        transform: translate(-90%, -50%);
     }
 
     section.gallery article.col-lg-3{
@@ -225,7 +244,7 @@ p.lead{
 @media  only screen and (min-width: 1220px) { 
 
     section.hero img{
-        width: 35%;
+        width: 45%;
     }
 
      section.gallery article.col-lg-3{
@@ -234,6 +253,10 @@ p.lead{
 
     .hero div.hero-text h2{
         line-height: 1.4;
+    }
+
+    .display-1 {
+        font-size: 5.5rem;
     }
    
 }
