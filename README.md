@@ -1,6 +1,6 @@
 # Description
 
-Spacestagram is a web app that share photos from one of [NASA’s image APIs](https://api.nasa.gov/)  specifically the Astronomy Pictures of the Day (APOD) API. 
+Spacestagram is a web app that shares photos from one of [NASA’s image APIs](https://api.nasa.gov/)  specifically the Astronomy Pictures of the Day (APOD) API. 
 
 This project is for [Shopify's Front End Developer Intern Challenge - Winter 2022](https://www.shopify.com/careers/frontend-developer-intern-remote-winter-2022-6932cbed) in their mission to make Commerce Better for Everyone to include the whole entire universe.
    
