@@ -119,7 +119,7 @@ const likeBtn = id =>{
     else{//post has been liked already
 
         likeBtn.setAttribute('class', 'far fa-heart');
-        localStorage.removeItem(id);
+        localStorage.removeItem(id); //removing the item from local storage in order to space
     }
 }
 
