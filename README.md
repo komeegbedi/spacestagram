@@ -17,7 +17,7 @@ You can view the project live here : https://komeegbedi.github.io/spacestagram/
 
 **Desktop Version**
 
-<img src="destop-hero.PNG" width="50%" alt="Desktop Hero Section">
+<img src="desktop-hero.PNG" width="50%" alt="Desktop Hero Section">
 <img src="desktop-post.PNG" width="50%" alt="Desktop Post Section">
 
 **Mobile Version**
